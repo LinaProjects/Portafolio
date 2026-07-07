@@ -1,0 +1,199 @@
+:root {
+  --color-fondo: #eaedff;
+  --color-secundario: #c5c9e5;
+  --color-acento: #a6a1e1;
+  --color-texto: #383a66;
+  --color-tarjeta: #d4c5f9;
+}
+
+html.modo-noche {
+  --color-fondo: #1a1b2e;
+  --color-secundario: #2d2f4a;
+  --color-acento: #a6a1e1;
+  --color-texto: #eaedff;
+  --color-tarjeta: #383a66;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-fondo);
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 8px;
+}
+
+body {
+  margin: 30px;
+}
+
+.titulo {
+  padding: 120px 15px;
+  width: 60%;
+  flex: 1;
+}
+
+.foto {
+  width: 300px;
+  height: 300px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: var(--color-secundario);
+  margin: auto;
+
+  /* ✅ Centrar la imagen con flexbox */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* En lugar de padding, usamos un borde para el efecto */
+  border: 8px solid var(--color-secundario);
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.foto img {
+  width: 95%;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.boton-sobre-mi {
+  background-color: var(--color-texto);
+  color: var(--color-fondo);
+  padding: 14px 32px;
+  border: 2px solid;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--color-fondo);
+}
+
+.boton-sobre-mi:hover {
+  background-color: var(--color-acento);
+  color: var(--color-texto);
+}
+
+.boton-sobre-mi a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-texto);
+}
+
+.sobre-mi,
+.contacto {
+  background-color: var(--color-tarjeta);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.contacto a {
+  color: var(--color-texto);
+  text-decoration: none;
+}
+
+.grid-habilidad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 8px;
+  color: var(--color-texto);
+}
+
+.item {
+  background-color: var(--color-secundario);
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+p {
+  color: var(--color-texto);
+}
+
+.boton-flotante {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--color-texto);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  z-index: 1000;
+}
+
+.boton-flotante:hover {
+  transform: scale(1.1);
+  background-color: var(--color-acento);
+  border: 2px solid var(--color-texto);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    padding: 20px 15px;
+  }
+
+  article,
+  section {
+    padding: 25px 20px;
+  }
+
+  header {
+    padding: 40px 15px 30px;
+  }
+
+  .titulo {
+    padding: 30px 15px;
+    width: 100%;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .habilidades {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-habilidad {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  body {
+    margin: 8px;
+  }
+  article {
+    padding: 25px 8px;
+  }
+}
