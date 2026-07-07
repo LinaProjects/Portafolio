@@ -169,6 +169,7 @@ p {
 
   header {
     padding: 40px 15px 30px;
+    flex-direction: column;
   }
 
   .titulo {
@@ -183,6 +184,12 @@ p {
   .habilidades {
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 10px;
+  }
+
+  .foto {
+    width: 60%;
+    height: auto;
+    margin: 0 auto;
   }
 }
 
